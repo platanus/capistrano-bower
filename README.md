@@ -28,6 +28,8 @@ or can be run in isolation with `cap production bower:install`
 
 Configurable options, shown here with defaults:
 
+    set :bower_dir, -> { '../shared/bower_components' }
+    set :bower_cwd, -> { release_path }
     set :bower_flags, '--quiet'
     set :bower_roles, :all
 
