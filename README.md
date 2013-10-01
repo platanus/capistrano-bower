@@ -1,4 +1,4 @@
-# Capistrano::Bower
+# Capistrano::Bower [![Gem Version](https://badge.fury.io/rb/capistrano-bower.png)](http://badge.fury.io/rb/capistrano-bower)
 
 Bower for support for Capistrano 3.x
 
