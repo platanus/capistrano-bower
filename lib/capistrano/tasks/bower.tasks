@@ -1,0 +1,28 @@
+namespace :bower do
+  desc <<-DESC
+        Install the current Bower environment. The install command is executed \
+        with the --quiet flag.
+
+        You can override any of these defaults by setting the variables shown below.
+
+          set :bower_flags, '--quiet'
+          set :bower_roles, :all
+    DESC
+  task :install do
+    on roles fetch(:bower_roles) do
+      within release_path do
+        execute :bower, "install",
+          fetch(:bower_flags)
+      end
+    end
+  end
+
+  before 'deploy:updated', 'bower:install'
+end
+
+namespace :load do
+  task :defaults do
+    set :bower_flags, '--quiet'
+    set :bower_roles, :all
+  end
+end
