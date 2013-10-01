@@ -28,8 +28,12 @@ or can be run in isolation with `cap production bower:install`
 
 Configurable options, shown here with defaults:
 
+    set :bower_dir, -> { (shared_path.relative_path_from release_path).join((JSON.parse(File.read(".bowerrc")) rescue {}).fetch("directory", "bower_components")) }
+    set :bower_cwd, -> { release_path }
     set :bower_flags, '--quiet'
     set :bower_roles, :all
+
+NOTE: bower doesn't support installing packages to an absoulte path. When the directory property is used, it's always relative to the cwd property. That's why in the default value I had to use the `relative_path_from` method from the release path.
 
 ## Contributing
 
