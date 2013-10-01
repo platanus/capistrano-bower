@@ -1,4 +1,5 @@
 require 'pathname'
+require 'json'
 
 namespace :bower do
   desc <<-DESC
@@ -7,7 +8,7 @@ namespace :bower do
 
         You can override any of these defaults by setting the variables shown below.
 
-          set :bower_dir, -> { (shared_path.relative_path_from release_path).join('bower_components') }
+          set :bower_dir, -> { (shared_path.relative_path_from release_path).join((JSON.parse(File.read(".bowerrc")) rescue {}).fetch("directory", "bower_components")) }
           set :bower_cwd, -> { release_path }
           set :bower_flags, '--quiet'
           set :bower_roles, :all
@@ -28,7 +29,7 @@ end
 
 namespace :load do
   task :defaults do
-    set :bower_dir, -> { (shared_path.relative_path_from release_path).join('bower_components') }
+    set :bower_dir, -> { (shared_path.relative_path_from release_path).join((JSON.parse(File.read(".bowerrc")) rescue {}).fetch("directory", "bower_components")) }
     set :bower_cwd, -> { release_path }
     set :bower_flags, '--quiet'
     set :bower_roles, :all
