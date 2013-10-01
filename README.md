@@ -33,6 +33,8 @@ Configurable options, shown here with defaults:
     set :bower_flags, '--quiet'
     set :bower_roles, :all
 
+NOTE: bower doesn't support installing packages to an absoulte path. When the directory property is used, it's always relative to the cwd property. That's why in the default value I had to use the `relative_path_from` method from the release path.
+
 ## Contributing
 
 1. Fork it
