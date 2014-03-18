@@ -30,6 +30,13 @@ Configurable options, shown here with defaults:
 
     set :bower_flags, '--quiet'
     set :bower_roles, :all
+    set :bower_dir, ''
+
+If your bower.json is not in the root directory, set the directory with :bower_dir. For example with Symfony2:
+
+    set :bower_flags, '--quiet'
+    set :bower_roles, :all
+    set :bower_dir, 'web'
 
 ## Contributing
 
