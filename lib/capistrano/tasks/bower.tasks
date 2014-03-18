@@ -7,6 +7,7 @@ namespace :bower do
 
           set :bower_flags, '--quiet'
           set :bower_roles, :all
+          set :bower_dir, nil
     DESC
   task :install do
     on roles fetch(:bower_roles) do

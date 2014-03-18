@@ -7,7 +7,7 @@ Bower for support for Capistrano 3.x
 Add this line to your application's Gemfile:
 
     gem 'capistrano-bower'
-    gem 'capistrano', github: 'capistrano/capistrano', branch: 'v3'
+    gem 'capistrano'
 
 And then execute:
 
@@ -30,7 +30,7 @@ Configurable options, shown here with defaults:
 
     set :bower_flags, '--quiet'
     set :bower_roles, :all
-    set :bower_dir, ''
+    set :bower_dir, nil
 
 If your bower.json is not in the root directory, set the directory with :bower_dir. For example with Symfony2:
 
