@@ -6,7 +6,7 @@ namespace :bower do
         You can override any of these defaults by setting the variables shown below.
 
           set :bower_flags, '--quiet'
-          set :bower_roles, :all
+          set :bower_roles, :web
           set :bower_dir, nil
     DESC
   task :install do
@@ -24,7 +24,7 @@ end
 namespace :load do
   task :defaults do
     set :bower_flags, '--quiet'
-    set :bower_roles, :all
+    set :bower_roles, :web
     set :bower_dir, nil
   end
 end
