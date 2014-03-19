@@ -6,8 +6,10 @@ Bower for support for Capistrano 3.x
 
 Add this line to your application's Gemfile:
 
-    gem 'capistrano-bower'
-    gem 'capistrano'
+```ruby
+gem 'capistrano-bower'
+gem 'capistrano'
+```
 
 And then execute:
 
@@ -21,22 +23,28 @@ Or install it yourself as:
 
 Require in `Capfile` to use the default task:
 
-    require 'capistrano/bower'
+```ruby
+require 'capistrano/bower'
+```
 
 The task will run before `deploy:updated` as part of Capistrano's default deploy,
 or can be run in isolation with `cap production bower:install`
 
 Configurable options, shown here with defaults:
 
-    set :bower_flags, '--quiet --config.interactive=false'
-    set :bower_roles, :web
-    set :bower_target_path, nil
+```ruby
+set :bower_flags, '--quiet --config.interactive=false'
+set :bower_roles, :web
+set :bower_target_path, nil
+```
 
 If your bower.json is not in the root directory, set the directory with :bower_target_path. For example with Symfony2:
 
-    set :bower_flags, '--quiet --config.interactive=false'
-    set :bower_roles, :web
-    set :bower_target_path, "#{release_path}/web"
+```ruby
+set :bower_flags, '--quiet --config.interactive=false'
+set :bower_roles, :web
+set :bower_target_path, "#{release_path}/web"
+```
 
 ## Contributing
 
