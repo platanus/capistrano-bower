@@ -1,11 +1,11 @@
 namespace :bower do
   desc <<-DESC
         Install the current Bower environment. The install command is executed \
-        with the --quiet flag.
+        with the --quiet and --config.interactive=false flag.
 
         You can override any of these defaults by setting the variables shown below.
 
-          set :bower_flags, '--quiet'
+          set :bower_flags, '--quiet --config.interactive=false'
           set :bower_roles, :web
           set :bower_target_path, nil
     DESC
@@ -23,7 +23,7 @@ end
 
 namespace :load do
   task :defaults do
-    set :bower_flags, '--quiet'
+    set :bower_flags, '--quiet --config.interactive=false'
     set :bower_roles, :web
   end
 end
