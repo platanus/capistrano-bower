@@ -7,11 +7,11 @@ namespace :bower do
 
           set :bower_flags, '--quiet'
           set :bower_roles, :web
-          set :bower_dir, nil
+          set :bower_target_path, nil
     DESC
   task :install do
     on roles fetch(:bower_roles) do
-      within File.join(release_path, fetch(:bower_dir, '')) do
+      within fetch(:bower_target_path, release_path) do
         execute :bower, "install",
           fetch(:bower_flags)
       end
@@ -25,6 +25,5 @@ namespace :load do
   task :defaults do
     set :bower_flags, '--quiet'
     set :bower_roles, :web
-    set :bower_dir, nil
   end
 end
