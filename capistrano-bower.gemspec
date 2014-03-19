@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'capistrano-bower'
-  spec.version       = '0.0.2'
+  spec.version       = '1.0.0'
   spec.authors       = ['Juan Ignacio Donoso']
   spec.email         = ['jidonoso@gmail.com']
   spec.description   = %q{Bower support for Capistrano 3.x}
