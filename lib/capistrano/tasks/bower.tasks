@@ -1,3 +1,5 @@
+require 'pathname'
+
 namespace :bower do
   desc <<-DESC
         Install the current Bower environment. The install command is executed \
@@ -11,7 +13,12 @@ namespace :bower do
     DESC
   task :install do
     on roles fetch(:bower_roles) do
-      within fetch(:bower_target_path, release_path) do
+      bower_install_path = fetch(:bower_target_path, release_path)
+      if not (Pathname.new bower_install_path).absolute?
+        bower_install_path = File.join(release_path, bower_install_path)
+      end
+      puts bower_install_path
+      within bower_install_path do
         execute :bower, "install",
           fetch(:bower_flags)
       end
