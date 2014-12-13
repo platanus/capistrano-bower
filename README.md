@@ -53,3 +53,15 @@ set :bower_target_path, "#{release_path}/web"
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Credits
+
+Thank you [contributors](https://github.com/platanus/guides/graphs/contributors)!
+
+<img src="http://platan.us/gravatar_with_text.png" alt="Platanus" width="250"/>
+
+capistrano-bower is maintained by [platanus](http://platan.us).
+
+## License
+
+Guides is © 2014 platanus, spa. It is free software and may be redistributed under the terms specified in the LICENSE file.
