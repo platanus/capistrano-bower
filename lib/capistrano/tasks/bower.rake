@@ -19,6 +19,7 @@ namespace :bower do
   end
 
   before 'deploy:updated', 'bower:install'
+
 end
 
 namespace :load do
