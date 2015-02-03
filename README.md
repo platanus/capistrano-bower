@@ -36,6 +36,7 @@ Configurable options, shown here with defaults:
 set :bower_flags, '--quiet --config.interactive=false'
 set :bower_roles, :web
 set :bower_target_path, nil
+set :bower_bin, :bower
 ```
 
 If your bower.json is not in the root directory, set the directory with :bower_target_path. For example with Symfony2:
@@ -44,6 +45,12 @@ If your bower.json is not in the root directory, set the directory with :bower_t
 set :bower_flags, '--quiet --config.interactive=false'
 set :bower_roles, :web
 set :bower_target_path, "#{release_path}/web"
+```
+
+If your `bower` executable is not found in the default PATH by capistrano, set the `bower_bin` option. For example:
+
+```ruby
+set :bower_bin, '/usr/local/node/node-default/bin/bower'
 ```
 
 ## Contributing
