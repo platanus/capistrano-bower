@@ -12,7 +12,7 @@ namespace :bower do
   task :install do
     on roles fetch(:bower_roles) do
       within fetch(:bower_target_path, release_path) do
-        execute :bower, "install",
+        execute fetch(:bower_bin), "install",
           fetch(:bower_flags)
       end
     end
@@ -26,5 +26,6 @@ namespace :load do
   task :defaults do
     set :bower_flags, '--quiet --config.interactive=false'
     set :bower_roles, :web
+    set :bower_bin, :bower
   end
 end
